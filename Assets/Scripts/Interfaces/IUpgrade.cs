@@ -1,18 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class IUpgrade : MonoBehaviour
+public interface IUpgrade
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    string Name { get; }
+    void Apply(PlayerUpgrades player);
+    void ApplyOnShoot(IBullet bullet);
 }
