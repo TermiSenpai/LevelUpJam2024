@@ -1041,6 +1041,7 @@ GameObject:
   - component: {fileID: 1119574375}
   - component: {fileID: 1119574374}
   - component: {fileID: 1119574376}
+  - component: {fileID: 1119574377}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1129,6 +1130,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   upgradePanel: {fileID: 373155162}
+--- !u!114 &1119574377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119574373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5f5ffa0e556f8d439f66ccae27e8a5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  bulletPrefab: {fileID: 4040567880444384359, guid: 121a27823e424344ca10cff8642e58ed, type: 3}
+  bulletSpeed: 10
 --- !u!1 &1243702254
 GameObject:
   m_ObjectHideFlags: 0
