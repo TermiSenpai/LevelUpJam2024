@@ -16,6 +16,14 @@ public abstract class Bullet : MonoBehaviour, IBullet
         onHitEffects.Add(effect);
     }
 
+    protected void ApplyOnShootEffects()
+    {
+        foreach (var effect in onHitEffects)
+        {
+            // Aplicar efectos a los objetos que reciben daño (IDamageable)
+        }
+    }
+
     public void Hit(IDamageable damageable)
     {
         damageable.TakeDamage(damage);
@@ -25,5 +33,3 @@ public abstract class Bullet : MonoBehaviour, IBullet
         }
     }
 }
-
-// Similar para BombBullet, BiggerBullet, SmallerFastBullet...

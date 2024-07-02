@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class PlayerUpgrades : MonoBehaviour
 {
-    private List<IUpgrade> activeUpgrades = new List<IUpgrade>();
-    private IBullet currentBullet;
+    [SerializeField] private List<IUpgrade> activeUpgrades = new List<IUpgrade>();
+    private Bullet currentBullet;
     public int level;
     public List<IUpgrade> availableUpgrades;
     public GameObject upgradePanel;
 
+    private void Start()
+    {
+        // Ejemplo de inicialización de availableUpgrades
+        availableUpgrades = new List<IUpgrade>
+        {
+            new PoisonBulletUpgrade(), // Ejemplo de agregar una mejora
+            new IceBulletUpgrade() // Ejemplo de agregar otra mejora
+        };
+
+        LevelUp(); // Llama a LevelUp() después de inicializar availableUpgrades
+    }
+
+
     public void SetBulletType(Type bulletType)
     {
-        currentBullet = (IBullet)Activator.CreateInstance(bulletType);
+        currentBullet = (Bullet)gameObject.AddComponent(bulletType); // Añadir componente de bala dinámicamente
     }
 
     public void LevelUp()
@@ -35,7 +48,7 @@ public class PlayerUpgrades : MonoBehaviour
     public void ApplyUpgrade(IUpgrade upgrade)
     {
         activeUpgrades.Add(upgrade);
-        upgrade.Apply(this);
+        //upgrade.Apply(currentBullet);
     }
 
     public void Shoot()

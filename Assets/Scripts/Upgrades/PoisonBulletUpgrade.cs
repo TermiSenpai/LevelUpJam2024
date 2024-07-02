@@ -11,7 +11,13 @@
     {
         if (bullet is PoisonBullet poisonBullet)
         {
-            // Configurar el daño por veneno si es necesario
+            poisonBullet.AddOnHitEffect(damageable => {
+                // Implementa aquí el efecto específico de veneno en el objeto damageable
+                if (damageable is Enemy enemy)
+                {
+                    enemy.ApplyPoison(poisonBullet.poisonDamage); // Ejemplo hipotético de aplicación de veneno
+                }
+            });
         }
     }
 }
